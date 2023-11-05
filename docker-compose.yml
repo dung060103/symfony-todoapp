@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+
+    ####################################################################################################
+    # PHP
+    ####################################################################################################
+    php:
+        container_name: symfony_php
+        build: .docker/php
+        ports:
+            - 5173:5173
+        volumes:
+            - .:/var/www:cached
+
+    ####################################################################################################
+    # Nginx
+    ####################################################################################################
+    nginx:
+        container_name: symfony_nginx
+        image: nginx
+        ports:
+            - 80:80
+        volumes:
+            - .:/var/www
+            - .docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - .docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+        depends_on:
+            - php
+
+    ####################################################################################################
+    # DATABASE (MySQL)
+    ####################################################################################################
+    db:
+        container_name: symfony_mysql
+        image: mysql:8.1
+        command: --default-authentication-plugin=mysql_native_password
+        ports:
+            - 3308:3306
+        volumes:
+            - .docker/db/data:/var/lib/mysql
+            - .docker/logs:/var/log/mysql
+            - .docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+            - .docker/db/sql:/docker-entrypoint-initdb.d
+        environment:
+             MYSQL_ROOT_PASSWORD : dung060103
+             MYSQL_DATABASE: portfolio
+             MYSQL_USER: dungtyner
+             MYSQL_PASSWORD: dung060103
+    # ####################################################################################################
+    # # DATABASE (MariaDB)
+    # ####################################################################################################
+    # db:
+    #     container_name: symfony_mariadb
+    #     image: mariadb:10.11
+    #     ports:
+    #         - 3306:3306
+    #     volumes:
+    #         - .docker/db/data bk 2:/var/lib/mysql
+    #         - .docker/logs:/var/log/mysql
+    #         - .docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+    #         - .docker/db/sql:/docker-entrypoint-initdb.d
+    #     environment:
+    #         MYSQL_ROOT_PASSWORD: root
+    #         MYSQL_DATABASE: symfony_db_name
+    #         MYSQL_USER: symfony_db_user
+    #         MYSQL_PASSWORD: symfony_db_pass

@@ -1,0 +1,7 @@
+# config/packages/dungtyner.yaml
+
+dungtyner:
+  structure_dictator:
+    controller: 'src\CC\Controller'
+    repository: 'src\CC\Repository'
+    factory: 'src\CC\Factory'

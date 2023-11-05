@@ -1,0 +1,182 @@
+/usr/sbin/mysqld, Version: 8.1.0 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2023-11-05T17:31:25.707908Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+2023-11-05T17:34:36.151432Z	    8 Connect	dungtyner@172.25.0.1 on  using SSL/TLS
+2023-11-05T17:34:36.155610Z	    8 Query	/* mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2023-11-05T17:34:36.165553Z	    8 Query	SET NAMES utf8mb4
+2023-11-05T17:34:36.167207Z	    8 Query	SET character_set_results = utf8
+2023-11-05T17:34:36.168305Z	    8 Query	SET autocommit=1
+2023-11-05T17:34:36.189466Z	    8 Query	select version(), @@version_comment, database()
+2023-11-05T17:34:36.230170Z	    8 Query	show variables like 'aurora\_version'
+2023-11-05T17:34:36.473096Z	    8 Query	SHOW WARNINGS
+2023-11-05T17:34:36.478970Z	    8 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SELECT 'keep alive'
+2023-11-05T17:34:36.483775Z	    8 Query	SHOW WARNINGS
+2023-11-05T17:34:36.496977Z	    8 Query	SHOW WARNINGS
+2023-11-05T17:34:36.500330Z	    8 Query	/* ApplicationName=PhpStorm 2023.2.3 */ show status like 'ssl_version'
+2023-11-05T17:34:36.544539Z	    8 Query	SHOW WARNINGS
+2023-11-05T17:34:36.553098Z	    8 Quit	
+2023-11-05T17:34:50.681324Z	    9 Connect	dungtyner@172.25.0.1 on  using SSL/TLS
+2023-11-05T17:34:50.686345Z	    9 Query	/* mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2023-11-05T17:34:50.697196Z	    9 Query	SET NAMES utf8mb4
+2023-11-05T17:34:50.698036Z	    9 Query	SET character_set_results = utf8
+2023-11-05T17:34:50.699043Z	    9 Query	SET autocommit=1
+2023-11-05T17:34:50.725027Z	    9 Query	select version(), @@version_comment, database()
+2023-11-05T17:34:50.767337Z	    9 Query	show variables like 'aurora\_version'
+2023-11-05T17:34:50.863532Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ set session transaction read write
+2023-11-05T17:34:50.887925Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:50.891212Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select database()
+2023-11-05T17:34:50.952243Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:50.987915Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:50.989088Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select database(), schema(), left(user(),instr(concat(user(),'@'),'@')-1)
+2023-11-05T17:34:51.003100Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.063298Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.068570Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.069401Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select @@event_scheduler
+2023-11-05T17:34:51.101973Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.112310Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.152215Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.154058Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select database(), schema(), left(user(),instr(concat(user(),'@'),'@')-1)
+2023-11-05T17:34:51.156631Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.179485Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.184071Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.185431Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select @@event_scheduler
+2023-11-05T17:34:51.204106Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.212379Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.245951Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.250618Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.252468Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select @@default_storage_engine, @@default_tmp_storage_engine
+2023-11-05T17:34:51.266165Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.271212Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.292149Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.295565Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.297029Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select table_name from information_schema.tables
+        where lower(table_schema) = 'information_schema'
+          and lower(table_name) = 'parameters'
+2023-11-05T17:34:51.324484Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.330072Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.363661Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.367809Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.369869Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select @@GLOBAL.lower_case_table_names
+2023-11-05T17:34:51.394611Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.401770Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.424560Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.430827Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.433304Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select schema_name, default_collation_name
+        from information_schema.schemata
+2023-11-05T17:34:51.463884Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.469792Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.544133Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.547526Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.548795Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select @@GLOBAL.lower_case_table_names
+2023-11-05T17:34:51.558798Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.562501Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.572956Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.576092Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.576926Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select schema_name, default_collation_name
+        from information_schema.schemata
+2023-11-05T17:34:51.587430Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.592274Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.603650Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.606292Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.607434Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select @@GLOBAL.lower_case_table_names
+2023-11-05T17:34:51.616131Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.618893Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.629568Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.632399Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.633175Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select schema_name, default_collation_name
+        from information_schema.schemata
+2023-11-05T17:34:51.647837Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.653695Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.665347Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.668216Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.669241Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select collation_name, character_set_name,
+          lower(is_default) = 'yes' as is_default
+        from information_schema.collations
+2023-11-05T17:34:51.692920Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.743019Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.757466Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.761189Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.762414Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select Host, User,
+       ssl_type, ssl_cipher, x509_issuer, x509_subject,
+       max_questions, max_updates, max_connections, max_user_connections, plugin, authentication_string, account_locked is_role
+      from mysql.user
+2023-11-05T17:34:51.799755Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.815892Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.818726Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.820164Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select grantee, privilege_type, is_grantable from information_schema.user_privileges
+2023-11-05T17:34:51.827951Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.832902Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.841605Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.843831Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.844634Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select grantee, table_schema, privilege_type, is_grantable from information_schema.schema_privileges
+2023-11-05T17:34:51.855484Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.861913Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.879343Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.883406Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.885468Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select from_host, from_user, to_host, to_user, with_admin_option from mysql.role_edges order by to_user, to_host
+2023-11-05T17:34:51.892192Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.904872Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.909691Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ SET net_write_timeout=600
+2023-11-05T17:34:51.910862Z	    9 Query	/* ApplicationName=PhpStorm 2023.2.3 */ select role_host from_host, role_name from_user, grantee_host to_host, grantee to_user, substr(is_grantable, 1, 1) with_admin_option 
+          from information_schema.applicable_roles order by to_user, to_host
+2023-11-05T17:34:51.914524Z	    9 Query	SET net_write_timeout=60
+2023-11-05T17:34:51.927385Z	    9 Query	SHOW WARNINGS
+2023-11-05T17:34:51.960050Z	    9 Query	SELECT @@session.transaction_isolation
+2023-11-05T17:34:51.980992Z	    9 Quit	
+/usr/sbin/mysqld, Version: 8.1.0 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2023-11-05T22:59:34.916935Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+/usr/sbin/mysqld, Version: 8.1.0 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2023-11-05T23:24:47.808536Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+/usr/sbin/mysqld, Version: 8.1.0 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2023-11-05T23:37:54.495462Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+/usr/sbin/mysqld, Version: 8.1.0 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2023-11-05T23:44:15.810199Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
